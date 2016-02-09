@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Notification Assignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="row">
+          <ul id="nav">
+            <li class="profile-nav floatRight">
+              <span class="profile-small-pic"><img class="img-responsive" src="/assets/images/profile/2_2.jpg"></span>
+              <span class="profile-setting-icon">
+                <i class="fa fa-chevron-down"></i>
+              </span>
+              <ul class="profile-setting-dropdown">
+                <li class="user-name">Arvind</li>
+                <li class="log-out-user" >Log out</li>
+              </ul>
+            </li>
+            <li class="notification-nav floatRight notification-header-icon-holder">
+              <i class="fa fa-bell-o notification-header-icon">
+                <div id="header-notification-unread-counter" class="notification-counter"></div>
+              </i>
+              <div id="notification-wrapper">
+                <div class="notification-arrow-wrapper">
+                  <div class="notification-tooltip-arrow"></div>
+                </div>
+                <div class="notification-container">
+                  <div id="notification-header" class="text-center">
+                    <span class="notification-header-label">Notifications</span><span id="notification-unread-counter"
+                                                                                      class="notification-counter"></span>
+                  </div>
+                  <div id="notification-content">
+                  </div>
+                </div>
+              </div>
+              <i class="fa fa-envelope-o"></i>
+            </li>
+            <li class="nav-spacer floatRight">
+            </li>
+            <li id="t-search" class="floatRight">
+              <i class="fa fa-search "></i>
+              <input class="search-text" type="text"/>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+    </nav>
+  <img src="/assets/images/banner.jpg" class="img-responsive"/>
+  <script type="text/template" id="notificationMsgContent">
+      <div class="notification-msg-wrapper">
+        <div class="notification-user-img"><img class="img-responsive" src="{{pic_prefix}}{{pic}}"/></div>
+        <div class="notification-user-msg"><span class="notification-user-name">{{user_name}}</span> {{msg}}</div>
+      </div>
+    </script>
+  <p class="text-center text-muted">© Copyright 2016</p>
+
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/underscore.min.js"></script>
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/app/main.js"></script>
+<script src="assets/js/app/notification_manager.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        var notificationMsgs = JSON.parse( localStorage.getItem('notificationMsgs') ) || [];
+        Notification.init( notificationMsgs, "/assets/images/profile/");
+    });
+</script>
+</body>
+</html>
