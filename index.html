@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
 <title>Notification Assignment</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -14,7 +14,7 @@
         <div class="row">
           <ul id="nav">
             <li class="profile-nav floatRight">
-              <span class="profile-small-pic"><img class="img-responsive" src="/assets/images/profile/2_2.jpg"></span>
+              <span class="profile-small-pic"><img class="img-responsive" src="assets/images/profile/4_4.jpg"></span>
               <span class="profile-setting-icon">
                 <i class="fa fa-chevron-down"></i>
               </span>
@@ -54,7 +54,7 @@
 
       </div>
     </nav>
-  <img src="/assets/images/banner.jpg" class="img-responsive"/>
+  <img src="assets/images/banner.jpg" class="img-responsive"/>
   <script type="text/template" id="notificationMsgContent">
       <div class="notification-msg-wrapper">
         <div class="notification-user-img"><img class="img-responsive" src="{{pic_prefix}}{{pic}}"/></div>
@@ -75,7 +75,7 @@
 <script type="text/javascript">
     $(function () {
         var notificationMsgs = JSON.parse( localStorage.getItem('notificationMsgs') ) || [];
-        Notification.init( notificationMsgs, "/assets/images/profile/");
+        Notification.init( notificationMsgs, "assets/images/profile/");
     });
 </script>
 </body>
